@@ -112,7 +112,7 @@ Check the [documentation](https://docs.microsoft.com/en-us/azure/container-regis
 
 Open Azure Machine Learning Studio and create your notebook or import the notebook [CreateCustomEnvFromADockerImage.ipynb][CreateCustomEnvFromADockerImage.ipynb] from my repository [docker-python-aml](https://github.com/tirtho/docker-python-aml) in github,
 
-Create a folder [diabetes-training][diabetes-training] in the above notebook at the same level where you have created the .ipynb file above. Then, copy the [diabetes_training.py][diabetes_training.py] and the [diabetes.csv][diabetes.csv] files from my repository [docker-python-aml](https://github.com/tirtho/docker-python-aml) in github.
+Create a folder *diabetes-training* in the above notebook at the same level where you have created the .ipynb file above. Then, copy the [diabetes_training.py][diabetes_training.py] and the [diabetes.csv][diabetes.csv] files from my repository [docker-python-aml](https://github.com/tirtho/docker-python-aml) in github.
 
 In [CreateCustomEnvFromADockerImage.ipynb][CreateCustomEnvFromADockerImage.ipynb] edit the following variables to enter your Azure Container Registry address and Service Principal details.
 
