@@ -159,7 +159,7 @@ That&#39;s it!!
 	# Remove all docker images
 	> sudo docker rmi -f $(sudo docker images -a -q)
 
-[Dockerfile]: <https://github.com/tirtho/docker-python-aml/Dockerfile>
+[Dockerfile]: <https://github.com/tirtho/docker-python-aml/blob/main/Dockerfile>
 [requirements.txt]: <https://github.com/tirtho/docker-python-aml/requirements.txt>
 [testPythonModulesNeeded.py]: <https://github.com/tirtho/docker-python-aml/testPythonModulesNeeded.py>
 [CreateCustomEnvFromADockerImage.ipynb]: <https://github.com/tirtho/docker-python-aml/CreateCustomEnvFromADockerImage.ipynb>
