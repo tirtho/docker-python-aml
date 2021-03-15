@@ -61,25 +61,30 @@ To access the docker images from the Azure Container Registry, you need to have 
 
 Run the following Azure CLI code to create the service principal. You can run it in the Cloud Shell from the Azure Portal or from your local machine provided it has the Azure CL installed.
 
+	#!/bin/bash
+
 	# Modify for your environment.
-	> ACR\_NAME: The name of your Azure Container Registry
-	> SERVICE\_PRINCIPAL\_NAME: Must be unique within your AD tenant
-	> ACR\_NAME=\&lt;container-registry-name\&gt;
-	> SERVICE\_PRINCIPAL\_NAME=acr-service-principal
+	# ACR_NAME: The name of your Azure Container Registry
+	# SERVICE_PRINCIPAL_NAME: Must be unique within your AD tenant
+	ACR_NAME=<container-registry-name>
+	SERVICE_PRINCIPAL_NAME=acr-service-principal
+	
 	# Obtain the full registry ID for subsequent command args
-	> ACR\_REGISTRY\_ID=$(az acr show --name $ACR\_NAME --query id --output tsv)
+	ACR_REGISTRY_ID=$(az acr show --name $ACR_NAME --query id --output tsv)
+
 	# Create the service principal with rights scoped to the registry.
-	# Default permissions are for docker pull access. Modify the &#39;--role&#39;
+	# Default permissions are for docker pull access. Modify the '--role'
 	# argument value as desired:
-	#    acrpull: pull only
-	#    acrpush: push and pull
-	#    owner: push, pull, and assign roles
-	> SP\_PASSWD=$(az ad sp create-for-rbac --name http://$SERVICE\_PRINCIPAL\_NAME --scopes $ACR\_REGISTRY\_ID --role acrpull --query password --output tsv)
-	> SP\_APP\_ID=$(az ad sp show --id http://$SERVICE\_PRINCIPAL\_NAME --query appId --output tsv)
-	# Output the service principal&#39;s credentials; use these in your services and
+	# acrpull:     pull only
+	# acrpush:     push and pull
+	# owner:       push, pull, and assign roles
+	SP_PASSWD=$(az ad sp create-for-rbac --name http://$SERVICE_PRINCIPAL_NAME --scopes $ACR_REGISTRY_ID --role acrpull --query password --output tsv)
+	SP_APP_ID=$(az ad sp show --id http://$SERVICE_PRINCIPAL_NAME --query appId --output tsv)
+	
+	# Output the service principal's credentials; use these in your services and
 	# applications to authenticate to the container registry.
-	> echo &quot;Service principal ID: $SP\_APP\_ID&quot;
-	> echo &quot;Service principal password: $SP\_PASSWD&quot;
+	echo "Service principal ID: $SP_APP_ID"
+	echo "Service principal password: $SP_PASSWD"
 
 Check the [documentation](https://docs.microsoft.com/en-us/azure/container-registry/container-registry-auth-service-principal#create-a-service-principal) on details on creating service principal.
 
