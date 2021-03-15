@@ -20,15 +20,15 @@ $ git clone [https://github.com/tirtho/docker-python-aml.git](https://github.com
 
 $ cd docker-python-aml
 
-The _ **requirements.txt** _ contains the list of python packages we plan to put in the docker image.
+The [requirements.txt][requirements.txt] contains the list of python packages we plan to put in the docker image.
 
 The [Dockerfile][Dockerfile] file contains information on how to build the docker image. We will create a docker image that includes Conda version 4.9.2 with Python 3.8.5.final.0 from the _ **continuumio/miniconda3** _base image.
 
-The _ **testPythonModulesNeeded.py** _ contains small piece of code to test if the image has all the packages you added in your above _ **requirements.txt** _file.
+The [testPythonModulesNeeded.py][testPythonModulesNeeded.py] contains small piece of code to test if the image has all the packages you added in your above [requirements.txt][requirements.txt] file.
 
-The Azure Machine Learning notebook is in _ **CreateCustomEnvFromADockerImage.ipynb.** _
+The Azure Machine Learning notebook is in [CreateCustomEnvFromADockerImage.ipynb][CreateCustomEnvFromADockerImage.ipynb]
 
-The training code and data are in _ **diabetes-training** _ folder.
+The training code and data are in [diabetes-training][diabetes-training] folder.
 
 ### Create docker image
 
@@ -110,22 +110,22 @@ Check the [documentation](https://docs.microsoft.com/en-us/azure/container-regis
 
 ### Create AML Environment in notebook
 
-Open Azure Machine Learning Studio and create your notebook or import the notebook _ **CreateCustomEnvFromADockerImage.ipynb** _ from my repository [docker-python-aml](https://github.com/tirtho/docker-python-aml) in github,
+Open Azure Machine Learning Studio and create your notebook or import the notebook [CreateCustomEnvFromADockerImage.ipynb][CreateCustomEnvFromADockerImage.ipynb] from my repository [docker-python-aml](https://github.com/tirtho/docker-python-aml) in github,
 
-Create a folder _ **diabetes-training** _ in the above notebook at the same level where you have created the .ipynb file above. Then, copy the _ **diabetes\_training.py** _ and the _ **diabetes.csv** _ files from my repository [docker-python-aml](https://github.com/tirtho/docker-python-aml) in github.
+Create a folder [diabetes-training][diabetes-training] in the above notebook at the same level where you have created the .ipynb file above. Then, copy the [diabetes_training.py][diabetes_training.py] and the [diabetes.csv][diabetes.csv] files from my repository [docker-python-aml](https://github.com/tirtho/docker-python-aml) in github.
 
-In _ **CreateCustomEnvFromADockerImage.ipynb** _ edit the following variables to enter your Azure Container Registry address and Service Principal details.
+In [CreateCustomEnvFromADockerImage.ipynb][CreateCustomEnvFromADockerImage.ipynb] edit the following variables to enter your Azure Container Registry address and Service Principal details.
 
 	env_name.python.user_managed_dependencies=True
 	env_name.docker.base_image = "<your azure container registry name>.azurecr.io/demo-aml/<name of the docker image>:latest"
 	env_name.docker.base_image_registry.username = "<azure container registry service principal id>"
 	env_name.docker.base_image_registry.password = "<service principal password>"
 	
-Create a Compute Target named CustomAMLCompute or attach to your existing Compute Target by setting the following parameter, cluster\_name in the _ **CreateCustomEnvFromADockerImage.ipynb** _ notebook
+Create a Compute Target named CustomAMLCompute or attach to your existing Compute Target by setting the following parameter, cluster_name in the [CreateCustomEnvFromADockerImage.ipynb][CreateCustomEnvFromADockerImage.ipynb] notebook
 
 	cluster_name = "CustomAMLCompute"
 
-Now run your notebook _ **CreateCustomEnvFromADockerImage.ipynb** _.
+Now run your notebook [CreateCustomEnvFromADockerImage.ipynb][CreateCustomEnvFromADockerImage.ipynb].
 
 Once it completes go to the Run history and find that the output folder contains the pickled file containing your trained model.
 
@@ -160,9 +160,9 @@ That&#39;s it!!
 	> sudo docker rmi -f $(sudo docker images -a -q)
 
 [Dockerfile]: <https://github.com/tirtho/docker-python-aml/blob/main/Dockerfile>
-[requirements.txt]: <https://github.com/tirtho/docker-python-aml/requirements.txt>
-[testPythonModulesNeeded.py]: <https://github.com/tirtho/docker-python-aml/testPythonModulesNeeded.py>
-[CreateCustomEnvFromADockerImage.ipynb]: <https://github.com/tirtho/docker-python-aml/CreateCustomEnvFromADockerImage.ipynb>
-[diabetes_training.py]: <https://github.com/tirtho/docker-python-aml/diabetes_training/diabetes_training.py>
-[diabetes.csv]: <https://github.com/tirtho/docker-python-aml/diabetes.csv>
-[diabetes_training]: <https://github.com/tirtho/docker-python-aml/diabetes_training>
+[requirements.txt]: <https://github.com/tirtho/docker-python-aml/blob/main/requirements.txt>
+[testPythonModulesNeeded.py]: <https://github.com/tirtho/docker-python-aml/blob/main/testPythonModulesNeeded.py>
+[CreateCustomEnvFromADockerImage.ipynb]: <https://github.com/tirtho/docker-python-aml/blob/main/CreateCustomEnvFromADockerImage.ipynb>
+[diabetes_training.py]: <https://github.com/tirtho/docker-python-aml/diabetes_training/blob/main/diabetes_training.py>
+[diabetes.csv]: <https://github.com/tirtho/docker-python-aml/blob/main/diabetes.csv>
+[diabetes_training]: <https://github.com/tirtho/docker-python-aml/blob/main/diabetes_training>
