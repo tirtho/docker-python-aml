@@ -92,12 +92,12 @@ Check the [documentation](https://docs.microsoft.com/en-us/azure/container-regis
 
 	> sudo az login
 	> sudo az acr login –name tbdemoacr
-	> sudo docker tag $MY\_DOCKER\_IMAGE tbdemoacr.azurecr.io/demo-aml/$MY\_DOCKER\_IMAGE
-	> sudo docker push tbdemoacr.azurecr.io/demo-aml/$MY\_DOCKER\_IMAGE
+	> sudo docker tag $MY_DOCKER_IMAGE tbdemoacr.azurecr.io/demo-aml/$MY_DOCKER_IMAGE
+	> sudo docker push tbdemoacr.azurecr.io/demo-aml/$MY_DOCKER_IMAGE
 	# Check if you can pull the image from your registry now
-	> sudo docker pull tbdemoacr.azurecr.io/demo-aml/$MY\_DOCKER\_IMAGE
+	> sudo docker pull tbdemoacr.azurecr.io/demo-aml/$MY_DOCKER_IMAGE
 	# Test the image
-	> sudo docker run -t -i $MY\_DOCKER\_IMAGE
+	> sudo docker run -t -i $MY_DOCKER_IMAGE
 
 # Setup Azure Machine Learning Environment
 
@@ -117,7 +117,7 @@ In _ **CreateCustomEnvFromADockerImage.ipynb** _ edit the following variables to
 
 Create a Compute Target named CustomAMLCompute or attach to your existing Compute Target by setting the following parameter, cluster\_name in the _ **CreateCustomEnvFromADockerImage.ipynb** _ notebook
 
-	> cluster\_name = &quot;CustomAMLCompute&quot;
+	> cluster_name = &quot;CustomAMLCompute&quot;
 
 Now run your notebook _ **CreateCustomEnvFromADockerImage.ipynb** _.
 
