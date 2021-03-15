@@ -163,6 +163,6 @@ That&#39;s it!!
 [requirements.txt]: <https://github.com/tirtho/docker-python-aml/blob/main/requirements.txt>
 [testPythonModulesNeeded.py]: <https://github.com/tirtho/docker-python-aml/blob/main/testPythonModulesNeeded.py>
 [CreateCustomEnvFromADockerImage.ipynb]: <https://github.com/tirtho/docker-python-aml/blob/main/CreateCustomEnvFromADockerImage.ipynb>
-[diabetes_training.py]: <https://github.com/tirtho/docker-python-aml/diabetes_training/blob/main/diabetes_training.py>
-[diabetes.csv]: <https://github.com/tirtho/docker-python-aml/blob/main/diabetes.csv>
-[diabetes_training]: <https://github.com/tirtho/docker-python-aml/blob/main/diabetes_training>
+[diabetes_training.py]: <https://github.com/tirtho/docker-python-aml/blob/main/diabetes-training/diabetes_training.py>
+[diabetes.csv]: <https://github.com/tirtho/docker-python-aml/blob/main/diabetes-training/diabetes.csv>
+[diabetes-training]: <https://github.com/tirtho/docker-python-aml/blob/main/diabetes-training>
