@@ -34,18 +34,23 @@ The training code and data are in _ **diabetes-training** _ folder.
 
 	# Name your docker image
 	> export MY_DOCKER_IMAGE=tr-linux64-conda-python3.8-docker
+	
 	# Build the docker image MY_DOCKER_IMAGE
 	# Make sure you have created the requirements.txt and the Dockerfile
 	# in the current directory and then run - 
 	> sudo docker build –tag $MY_DOCKER_IMAGE .
+	
 	# Run the image and do quick test of python location, version, conda version etc
 	> sudo docker run -t -i $MY_DOCKER_IMAGE
+	
 	# This above command should return a shell in the container.
 	# Check the conda and python versions (expected 4.9.2 and 3.8.5.final.0
 	(base) root@33396fc07e2:/app# conda info
+	
 	# Check if all ML packages are available in the image, by running this test python code
 	(base) root@33396fc07e2:/app# python testPythonModulesNeeded.py
 	Hello <azureml.core.run. OfflineRun object at …>
+	
 	# Exit the container shell
 	(base) root@33396fc07e2:/app# exit
 
@@ -134,9 +139,9 @@ That&#39;s it!!
 	> sudo docker ps
 
 	# Stop if it is running
-	> sudo docker stop $MY\_DOCKER\_IMAGE
+	> sudo docker stop $MY_DOCKER_IMAGE
 
-	# Check if MY\_DOCKER\_IMAGE is in local docker images list
+	# Check if MY_DOCKER_IMAGE is in local docker images list
 	> sudo docker images -a
 
 	# List dangling images
@@ -145,11 +150,11 @@ That&#39;s it!!
 	# Remove dangling images
 	> sudo docker image prune
 
-	# Remove existing container named MY\_DOCKER\_IMAGE
-	> sudo docker rm $MY\_DOCKER\_IMAGE
+	# Remove existing container named MY_DOCKER_IMAGE
+	> sudo docker rm $MY_DOCKER_IMAGE
 
-	# Remove existing MY\_DOCKER\_IMAGE image
-	> sudo docker rmi $MY\_DOCKER\_IMAGE
+	# Remove existing MY_DOCKER_IMAGE image
+	> sudo docker rmi $MY_DOCKER_IMAGE
 
 	# Remove all docker images
 	> sudo docker rmi -f $(sudo docker images -a -q)
