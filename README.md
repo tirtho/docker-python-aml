@@ -22,7 +22,7 @@ $ cd docker-python-aml
 
 The _ **requirements.txt** _ contains the list of python packages we plan to put in the docker image.
 
-The _ **Dockerfile** _ file contains information on how to build the docker image. We will create a docker image that includes Conda version 4.9.2 with Python 3.8.5.final.0 from the _ **continuumio/miniconda3** _base image.
+The [Dockerfile][Dockerfile] file contains information on how to build the docker image. We will create a docker image that includes Conda version 4.9.2 with Python 3.8.5.final.0 from the _ **continuumio/miniconda3** _base image.
 
 The _ **testPythonModulesNeeded.py** _ contains small piece of code to test if the image has all the packages you added in your above _ **requirements.txt** _file.
 
@@ -158,3 +158,11 @@ That&#39;s it!!
 
 	# Remove all docker images
 	> sudo docker rmi -f $(sudo docker images -a -q)
+
+[Dockerfile]: <https://github.com/tirtho/docker-python-aml/Dockerfile>
+[requirements.txt]: <https://github.com/tirtho/docker-python-aml/requirements.txt>
+[testPythonModulesNeeded.py]: <https://github.com/tirtho/docker-python-aml/testPythonModulesNeeded.py>
+[CreateCustomEnvFromADockerImage.ipynb]: <https://github.com/tirtho/docker-python-aml/CreateCustomEnvFromADockerImage.ipynb>
+[diabetes_training.py]: <https://github.com/tirtho/docker-python-aml/diabetes_training/diabetes_training.py>
+[diabetes.csv]: <https://github.com/tirtho/docker-python-aml/diabetes.csv>
+[diabetes_training]: <https://github.com/tirtho/docker-python-aml/diabetes_training>
