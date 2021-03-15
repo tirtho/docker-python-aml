@@ -111,13 +111,14 @@ Create a folder _ **diabetes-training** _ in the above notebook at the same leve
 
 In _ **CreateCustomEnvFromADockerImage.ipynb** _ edit the following variables to enter your Azure Container Registry address and Service Principal details.
 
-	> env name.docker.base_image = &quot;\&lt;your azure container registry name\&gt;.azurecr.io/demo-aml/\&lt;name of the docker image\&gt;:latest&quot;
-	> env\_name.docker.base\_image\_registry.username = &quot;\&lt;azure container registry service principal id\&gt;&quot;
-	> env\_name.docker.base\_image\_registry.password = &quot;\&lt;service principal password\&gt;&quot;
-
+	env_name.python.user_managed_dependencies=True
+	env_name.docker.base_image = "<your azure container registry name>.azurecr.io/demo-aml/<name of the docker image>:latest"
+	env_name.docker.base_image_registry.username = "<azure container registry service principal id>"
+	env_name.docker.base_image_registry.password = "<service principal password>"
+	
 Create a Compute Target named CustomAMLCompute or attach to your existing Compute Target by setting the following parameter, cluster\_name in the _ **CreateCustomEnvFromADockerImage.ipynb** _ notebook
 
-	> cluster_name = &quot;CustomAMLCompute&quot;
+	cluster_name = "CustomAMLCompute"
 
 Now run your notebook _ **CreateCustomEnvFromADockerImage.ipynb** _.
 
