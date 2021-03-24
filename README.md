@@ -64,7 +64,7 @@ The training code and data are in [diabetes-training][diabetes-training] folder.
 
 To access the docker images from the Azure Container Registry, you need to have the credentials to login first. There are multiple ways to achieve this. We will use the service principal option, which is common pattern for access by script.
 
-Run the following Azure CLI code to create the service principal. You can run it in the Cloud Shell from the Azure Portal or from your local machine provided it has the Azure CL installed.
+Run the following Azure CLI code to create the service principal. You can run it in the Cloud Shell from the Azure Portal or from your local machine provided it has the Azure CL installed. Alternatively, run the [createServicePrincipal.sh][createServicePrincipal.sh] script from a shell in the above Azure DSVM.
 
 	#!/bin/bash
 
@@ -166,3 +166,4 @@ That&#39;s it!!
 [diabetes_training.py]: <https://github.com/tirtho/docker-python-aml/blob/main/diabetes-training/diabetes_training.py>
 [diabetes.csv]: <https://github.com/tirtho/docker-python-aml/blob/main/diabetes-training/diabetes.csv>
 [diabetes-training]: <https://github.com/tirtho/docker-python-aml/blob/main/diabetes-training>
+[createServicePrincipal.sh]: <https://github.com/tirtho/docker-python-aml/blob/main/createServicePrincipal.sh>
