@@ -91,6 +91,7 @@ Run the following Azure CLI code to create the service principal. You can run it
 	echo "Service principal ID: $SP_APP_ID"
 	echo "Service principal password: $SP_PASSWD"
 
+Note down the Service principal ID and the Service principal password displayed in the terminal running the above script. You will need it in the following steps.
 Check the [documentation](https://docs.microsoft.com/en-us/azure/container-registry/container-registry-auth-service-principal#create-a-service-principal) on details on creating service principal.
 
 ### Register image in Azure Container Registry
