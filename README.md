@@ -96,11 +96,11 @@ Check the [documentation](https://docs.microsoft.com/en-us/azure/container-regis
 ### Register image in Azure Container Registry
 
 	> sudo az login
-	> sudo az acr login –name tbdemoacr
-	> sudo docker tag $MY_DOCKER_IMAGE tbdemoacr.azurecr.io/demo-aml/$MY_DOCKER_IMAGE
-	> sudo docker push tbdemoacr.azurecr.io/demo-aml/$MY_DOCKER_IMAGE
+	> sudo az acr login –name <azure container registry name>
+	> sudo docker tag $MY_DOCKER_IMAGE <azure container registry name>.azurecr.io/demo-aml/$MY_DOCKER_IMAGE
+	> sudo docker push <azure container registry name>.azurecr.io/demo-aml/$MY_DOCKER_IMAGE
 	# Check if you can pull the image from your registry now
-	> sudo docker pull tbdemoacr.azurecr.io/demo-aml/$MY_DOCKER_IMAGE
+	> sudo docker pull <azure container registry name>.azurecr.io/demo-aml/$MY_DOCKER_IMAGE
 	# Test the image
 	> sudo docker run -t -i $MY_DOCKER_IMAGE
 
@@ -117,7 +117,7 @@ Create a folder *diabetes-training* in the above notebook at the same level wher
 In [CreateCustomEnvironmentFromYourDockerImage.ipynb][CreateCustomEnvironmentFromYourDockerImage.ipynb] edit the following variables to enter your Azure Container Registry address and Service Principal details.
 
 	env_name.python.user_managed_dependencies=True
-	env_name.docker.base_image = "<your azure container registry name>.azurecr.io/demo-aml/<name of the docker image>:latest"
+	env_name.docker.base_image = "<azure container registry name>.azurecr.io/demo-aml/<name of the docker image>:latest"
 	env_name.docker.base_image_registry.username = "<azure container registry service principal id>"
 	env_name.docker.base_image_registry.password = "<service principal password>"
 	
